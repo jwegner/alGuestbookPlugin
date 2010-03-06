@@ -19,9 +19,7 @@ abstract class PluginAlGuestbookForm extends BaseAlGuestbookForm
     
     /* validate email adress */
     $this->changeToEmail('email');
-    
-    /* set help to email field */
-    $this->widgetSchema->setHelp('email', 'Your email will never be published');
+    $this->validatorSchema['email']->setOption('required', false);
     
     /* set label for text field */
     $this->widgetSchema['text']->setLabel('Your message');
