@@ -1,0 +1,10 @@
+
+Content:
+    
+    Feedback:
+        
+        alGuestbook:
+            name:           Guestbook entry|Guestbook entries
+            components:
+                list:       { name: Guestbook Index, cache: true }
+                form:

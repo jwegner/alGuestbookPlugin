@@ -1,0 +1,10 @@
+
+AlGuestbook:
+    actAs:
+        Timestampable:      {}
+    columns:
+        author:             { type: string(32), notnull: true }
+        email:              { type: string(64), notnull: true }
+        website:            { type: string(64) }
+        text:               { type: clob, extra: markdown }
+        is_active:          { type: boolean, notnull: true, default: true }
