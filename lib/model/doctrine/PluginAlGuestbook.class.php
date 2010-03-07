@@ -12,5 +12,14 @@
  */
 abstract class PluginAlGuestbook extends BaseAlGuestbook
 {
-
+    /**
+     * Returns a shorter text of the guestbook entries,
+     * to use in admin interface.
+     *
+     * @return string - short text
+     */
+    public function getShortText()
+    {
+        return dmString::truncate($this->getText(), 40);
+    }
 }
