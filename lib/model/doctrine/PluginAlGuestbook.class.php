@@ -20,6 +20,6 @@ abstract class PluginAlGuestbook extends BaseAlGuestbook
      */
     public function getShortText()
     {
-        return dmString::truncate($this->getText(), 40);
+        return dmString::truncate($this->getText(), 50);
     }
 }
