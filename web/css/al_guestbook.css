@@ -51,26 +51,3 @@
 #guestbook .created_at {
     margin-top: 10px;
 }
-
-/* guestbook footer */
-
-#guestbook_footer {
-    list-style-type: none;
-}
-
-#guestbook_footer .stats {
-    text-align: center;
-}
-
-#guestbook_footer .pagination {
-    text-align: center;
-}
-
-#guestbook_footer .pagination a {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#guestbook_footer .pagination a.active {
-    color: #888888;
-}
