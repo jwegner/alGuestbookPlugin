@@ -1,0 +1,7 @@
+all:
+    # Settings for alGusetbookPlugin
+    al_guestbook:
+        # wich css stylsheet is used for the guestbook default al_guestbook.css
+        # to add a different css for example new_guestbook.css add this stylesheet
+        # to public_html/alGuestbookPlugin/css, and change the use_stylesheet to the new_guestbook.
+        use_stylesheet:     al_guestbook

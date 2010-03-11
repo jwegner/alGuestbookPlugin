@@ -10,7 +10,7 @@ class alGuestbookComponents extends myFrontModuleComponents
   public function executeList()
   {
     /* add default css */
-    $this->getResponse()->addStylesheet('/alGuestbookPlugin/css/al_guestbook.css');
+    $this->getResponse()->addStylesheet('/alGuestbookPlugin/css/' . sfConfig::get('app_al_guestbook_use_stylesheet') . '.css');
     
     $query = $this->getListQuery();
     
