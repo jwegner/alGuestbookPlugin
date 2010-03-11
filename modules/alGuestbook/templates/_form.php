@@ -20,16 +20,16 @@ echo _open('ul#guestbook');
             echo _tag('ul',
             
                 /* author field */
-                _tag('span.author', $form['author']->label()->field()->error()) . '<br />' .
+                _tag('li.author', $form['author']->label()->field()->error()).
             
                 /* email field */
-                _tag('span.email', $form['email']->label()->field()->error()) . '<br />' .
+                _tag('li.email', $form['email']->label()->field()->error()).
             
                 /* website field */
-                _tag('span.webite', $form['website']->label()->field()->error()) . '<br /><br />' .
+                _tag('li.webite', $form['website']->label()->field()->error()).
             
                 /* text field */
-                _tag('span.text', $form['text']->label()->field()->error()) . '<br />'
+                _tag('li.text', $form['text']->label()->field()->error())
             
             );
             
