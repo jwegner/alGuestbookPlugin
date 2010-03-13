@@ -4,9 +4,16 @@
  * 
  * @param array $alGuestbookPager
  *
+ * @todo implement gravatar image to the view.
  */
 
 use_helper('Date');
+
+/* if GravatarEnabled --> use_helper('Gravatar); */
+if (alGuestbookTools::isGravatarEnabled())
+{
+  use_helper('Gravatar');
+}
 
 echo $alGuestbookPager->renderNavigationTop();
 
