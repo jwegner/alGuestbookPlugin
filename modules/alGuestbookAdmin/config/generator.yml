@@ -17,7 +17,7 @@ generator:
           - '=author'
           - email
           - website
-          - text
+          - short_text
           - is_active
           - created_at
           - updated_at
