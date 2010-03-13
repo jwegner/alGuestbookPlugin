@@ -17,7 +17,7 @@ generator:
           - '=author'
           - email
           - website
-          - short_text
+          - text
           - is_active
           - created_at
           - updated_at
@@ -42,6 +42,7 @@ generator:
           Text: [text]
           Others: [email, website]
         class: AlGuestbookAdminForm
-        fields: {  }
+        fields:
+          website: { is_link: true, help: 'Drag & drop a page here from the PAGES panel, or write an url' }
       edit: ~
       new: ~
