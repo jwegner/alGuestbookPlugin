@@ -28,23 +28,23 @@ class GravatarAPI
     {
         if (SYMFONY_VERSION >= 1.1)
         {
-            $this->cacheDir = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.sfConfig::get('app_al_guestbook_gravatar_cache_dir_name', 'g_cache').DIRECTORY_SEPARATOR;
+            $this->cacheDir = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.sfConfig::get('app_gravatar_cache_dir_name', 'g_cache').DIRECTORY_SEPARATOR;
             $this->cacheDirName = str_replace(sfConfig::get('sf_web_dir'), '', $this->cacheDir);
         }
         else
         {
-            $this->cacheDirName = DIRECTORY_SEPARATOR.sfConfig::get('sf_upload_dir_name').DIRECTORY_SEPARATOR.sfConfig::get('app_al_guestbook_gravatar_cache_dir_name', 'g_cache').DIRECTORY_SEPARATOR;
+            $this->cacheDirName = DIRECTORY_SEPARATOR.sfConfig::get('sf_upload_dir_name').DIRECTORY_SEPARATOR.sfConfig::get('app_gravatar_cache_dir_name', 'g_cache').DIRECTORY_SEPARATOR;
             $this->cacheDir = sfConfig::get('sf_web_dir').$this->cacheDirName;
         }
         
         /* default image */
-        $this->defaultImage = sfConfig::get('app_al_guestbook_gravatar_default_image', 'gravatar_default.png');
+        $this->defaultImage = sfConfig::get('app_gravatar_default_image', 'gravatar_default.png');
         /* cache expires */
-        $this->expireAgo = sfConfig::get('app_al_guestbook_gravatar_cache_expiration', '3 days');
+        $this->expireAgo = sfConfig::get('app_gravatar_cache_expiration', '3 days');
         
         if (is_null($imageSize) || $imageSize > 80 || $imageSize < 1)
         {
-            $this->imageSize = sfConfig::get('app_al_guestbook_gravatar_default_size', 80);
+            $this->imageSize = sfConfig::get('app_gravatar_default_size', 80);
         }
         else
         {
@@ -53,7 +53,7 @@ class GravatarAPI
         
         if (is_null($rating) || !in_array($rating, $this->baseRatings))
         {
-            $this->rating = sfConfig::get('app_al_guestbook_gravatar_default_rating', 'G');
+            $this->rating = sfConfig::get('app_gravatar_default_rating', 'G');
         }
         else
         {

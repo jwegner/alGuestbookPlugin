@@ -11,13 +11,13 @@
 function gravatar_image_tag($email, $gravatarRating = null, $gravatarSize = null, $altText = 'Gravatar photo')
 {
     /* get instance of GravatarAPI */
-    $gravatar = new GravatarAPI($gravatarRating, $gravatarSize);
+    $gravatar = new GravatarAPI($gravatarSize, $gravatarRating);
     
     /* return the gravatar image */
     return image_tag($gravatar->getGravatar($email),
                      array('alt'    => $altText,
-                           'width'  => sfConfig::get('app_al_guestbook_gravatar_default_size', 80),
-                           'height' => sfConfig::get('app_al_guestbook_gravatar_default_size', 80),
+                           'width'  => sfConfig::get('app_gravatar_default_size', 80),
+                           'height' => sfConfig::get('app_gravatar_default_size', 80),
                            'class'  => 'gravatar_photo'
                           )
                      );

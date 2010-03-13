@@ -6,9 +6,9 @@ all:
         # to public_html/alGuestbookPlugin/css, and change the use_stylesheet to the new_guestbook.
         use_stylesheet:     al_guestbook
         
-        gravatar:
-            enabled:          false
-            default_size:     40
-            default_image:
-            default_rating:   G
-            cache_expiration: 3 days
+    gravatar:
+        enabled:          false
+        default_size:     40
+        default_image:    gravatar_default.png
+        default_rating:   G
+        cache_expiration: 3 days

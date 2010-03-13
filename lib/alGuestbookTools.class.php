@@ -7,6 +7,6 @@ class alGuestbookTools
      */
     public static function isGravatarEnabled()
     {
-        return sfConfig::get('app_al_guetbook_gravatar_enabled');
+        return sfConfig::get('app_gravatar_enabled');
     }
 }

@@ -30,9 +30,19 @@ foreach ($alGuestbookPager as $alGuestbook)
     /* email if set */
     if ($alGuestbook->email)
     {
-      echo _tag('div.email') .
-        _tag('span.title', __('E-mail:')) .
-        _tag('span.value', _link('mailto:' . $alGuestbook->email)->text($alGuestbook->email));
+      echo _open('div.email');
+      
+        if (alGuestbookTools::isGravatarEnabled())
+        {
+          echo gravatar_image_tag($alGuestbook->email);
+        }
+        else
+        {
+          echo _tag('span.title', __('E-mail:'));
+          echo _tag('span.value', _link('mailto:' . $alGuestbook->email)->text($alGuestbook->email));
+        }
+      
+      echo _close('div');
     }
     
     /* website if set */
