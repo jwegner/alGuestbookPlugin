@@ -1,29 +1,13 @@
 <?php
+
+require_once realpath(dirname(__FILE__).'/..').'/lib/BasealGuestbookComponents.class.php';
+
 /**
  * Guestbook components
  * 
  * No redirection nor database manipulation ( insert, update, delete ) here
  */
-class alGuestbookComponents extends myFrontModuleComponents
+class alGuestbookComponents extends BasealGuestbookComponents
 {
-
-  public function executeList()
-  {
-    /* add default css */
-    $this->getResponse()->addStylesheet('/alGuestbookPlugin/css/' . sfConfig::get('app_al_guestbook_use_stylesheet') . '.css');
-    
-    $query = $this->getListQuery();
-    
-    $this->alGuestbookPager = $this->getPager($query);
-    
-    /* ajax pager */
-    $this->alGuestbookPager->setOption('ajax', true);
-  }
-
-  public function executeForm()
-  {
-    $this->form = $this->forms['AlGuestbook'];
-  }
-
-
+  
 }
