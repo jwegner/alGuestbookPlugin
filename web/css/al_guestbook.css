@@ -1,18 +1,9 @@
 /* guestbook index */
 
-#guestbook {
-    list-style-type: none;
-}
-
-#guestbook li {
+#guestbook .guestbook-element {
     border: 1px solid #bbb;
     margin: 10px;
     padding: 5px;
-    background-image: url('../images/background.jpg');
-}
-
-#guestbook div {
-    margin: 2px;
 }
 
 #guestbook span.title {
@@ -23,31 +14,14 @@
     font-variant: small-caps;
 }
 
-#guestbook div {
-    text-align: justify;
-}
-
 /* guestbook form fields */
-
-#guestbook .author {
-    margin: 10px 0px opx 10px;
-}
 
 #guestbook .text {
     margin-top: 10px;
-    font-size: 16px;
-    text-indent: 10px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 17px;
 }
 
-#guestbook .email {
+#guestbook .value {
     margin-left: 10px;
-}
-
-#guestbook .website {
-    margin-left: 10px;
-}
-
-#guestbook .created_at {
-    margin-top: 10px;
 }

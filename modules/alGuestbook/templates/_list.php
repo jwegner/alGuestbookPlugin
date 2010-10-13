@@ -8,6 +8,7 @@
  */
 
 use_helper('Date');
+use_helper('Url');
 
 /* if GravatarEnabled --> use_helper('Gravatar); */
 if (alGuestbookTools::isGravatarEnabled())
@@ -17,17 +18,13 @@ if (alGuestbookTools::isGravatarEnabled())
 
 echo $alGuestbookPager->renderNavigationTop();
 
-echo _open('ul#guestbook.element');
+echo _open('div#guestbook.element');
 
 foreach ($alGuestbookPager as $alGuestbook)
 {
-  echo _open('li.element');
+  echo _open('div.guestbook-element');
 
-    /* author */
-    echo _tag('div.author') .
-      _tag('span.value', $alGuestbook->author);
-    
-    /* email if set */
+    /* author and email or just author if set */
     if ($alGuestbook->email)
     {
       echo _open('div.email');
@@ -38,32 +35,30 @@ foreach ($alGuestbookPager as $alGuestbook)
         }
         else
         {
-          echo _tag('span.title', __('E-mail:'));
-          echo _tag('span.value', _link('mailto:' . $alGuestbook->email)->text($alGuestbook->email));
+          echo mail_to($alGuestbook->email, $alGuestbook->author, array('encode' => true));
         }
       
       echo _close('div');
-    }
+    } elseif ($alGuestbook->author)
+            echo _tag('div.author', $alGuestbook->author);
     
     /* website if set */
     if ($alGuestbook->website)
     {
       echo _tag('div.website') .
-        _tag('span.title', __('Website:')) .
+        _tag('span.title', __('Website') . ':') .
         _tag('span.value', _link($alGuestbook->website)->text($alGuestbook->website)->target('blank'));
     }
     
     /* guestbook text */
-    echo _tag('div.text') .
-      _tag('span.value', markdown($alGuestbook->text));
+    echo _tag('div.text', markdown($alGuestbook->text));
     
     /* created_at */
-    echo _tag('div.created_at') .
-      _tag('span.value', format_date($alGuestbook->createdAt, 'D'));
+    echo _tag('div.created_at', format_date($alGuestbook->createdAt, 'D'));
 
-  echo _close('li');
+  echo _close('div');
 }
 
-echo _close('ul');
+echo _close('div');
 
 echo $alGuestbookPager->renderNavigationBottom();

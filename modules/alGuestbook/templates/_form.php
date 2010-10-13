@@ -11,11 +11,9 @@ if ($sf_user->getFlash('guestbook_form_valid'))
     echo _tag('p.confirm', __('Thank you for your entry'));
 }
 
-echo _open('ul#guestbook');
+echo _open('div#guestbook');
 
-    echo _open('li');
-
-        echo $form->open();
+    echo $form->open();
         
             echo _tag('ul',
             
@@ -26,7 +24,7 @@ echo _open('ul#guestbook');
                 _tag('li.email', $form['email']->label()->field()->error()).
             
                 /* website field */
-                _tag('li.webite', $form['website']->label()->field()->error()).
+                _tag('li.website', $form['website']->label()->field()->error()).
             
                 /* text field */
                 _tag('li.text', $form['text']->label()->field()->error())
@@ -43,10 +41,8 @@ echo _open('ul#guestbook');
             echo $form->renderHiddenFields();
             
             /* and submit button */
-            echo $form->submit(__('Add'));
+            echo $form->submit(__('Add'), '.submit_wrap');
         
         echo $form->close();
     
-    echo _close('li');
-    
-echo _close('ul');
+echo _close('div');
